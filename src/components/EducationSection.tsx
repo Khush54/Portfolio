@@ -27,13 +27,6 @@ const education = [
 
 const certifications = [
   {
-    title: 'Python Programming Internship',
-    organization: 'CodSoft',
-    period: 'Jan – Feb 2025',
-    description:
-      'Built console-based applications such as calculator and password generator to improve programming logic.',
-  },
-  {
     title: 'Front-End Development Training',
     organization: 'Excellence Technology, Mohali',
     period: 'Jun – Sep 2024',

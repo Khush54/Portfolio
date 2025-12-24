@@ -3,11 +3,11 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 const skillCategories = [
   {
     title: 'Frontend',
-    skills: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Tailwind CSS', 'Responsive Design'],
+    skills: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Tailwind CSS', 'Responsive Design','React'],
   },
   {
     title: 'Programming',
-    skills: ['Python', 'SQL'],
+    skills: ['SQL', 'MySQL', 'PHP'],
   },
   {
     title: 'Tools & Version Control',
@@ -21,8 +21,10 @@ const allSkills = [
   { name: 'JavaScript', level: 85 },
   { name: 'Bootstrap', level: 88 },
   { name: 'Tailwind CSS', level: 90 },
-  { name: 'Python', level: 75 },
-  { name: 'SQL', level: 70 },
+  { name: 'React', level: 75 },
+  { name: 'SQL', level: 80 },
+  { name: 'MySQL', level: 90 },
+  { name: 'PHP', level: 80 },
   { name: 'Git/GitHub', level: 80 },
 ];
 

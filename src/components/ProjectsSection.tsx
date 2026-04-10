@@ -11,6 +11,7 @@ const projects = [
     icon: Book,
     color: 'from-blue-500 to-cyan-500',
     github: 'https://github.com/Khush54/LMS',
+    demo: 'https://lms-easy.infinityfreeapp.com/',
   },
   {
     title: 'Traveller Website',
@@ -20,6 +21,7 @@ const projects = [
     icon: Globe,
     color: 'from-emerald-500 to-teal-500',
     github: 'https://github.com/Khush54/Traveller',
+    demo: 'https://traveller-easywaytoexplore.netlify.app/',
   },
   {
     title: 'Mini Web Apps Collection',
@@ -29,6 +31,7 @@ const projects = [
     icon: Gamepad2,
     color: 'from-purple-500 to-pink-500',
     github: 'https://github.com/Khush54/Mini-Web-Apps',
+    demo: 'https://mini-web-apps-dom.netlify.app/',
   },
 ];
 
@@ -91,13 +94,15 @@ export function ProjectsSection() {
                     Code
                   </a>
                 </Button>
-              </div>
+             
               
-                {/* <Button variant="ghost" size="sm" className="flex-1">
+                <Button variant="ghost" size="sm" className="flex-1" asChild>
+                  <a href={project.demo} target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="w-4 h-4" />
                   Demo
-                </Button> */}
-                
+                  </a>
+                </Button>
+                </div>
             </div>
           ))}
         </div>

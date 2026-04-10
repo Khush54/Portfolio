@@ -6,7 +6,7 @@ const education = [
     degree: 'B.Tech in Computer Science and Engineering',
     institution: 'Universal Institute of Engineering and Technology, Punjab',
     period: 'Expected Graduation: August 2026',
-    grade: 'CGPA: 8.71/10',
+    grade: 'CGPA: 8.92/10',
     icon: GraduationCap,
   },
   {

@@ -3,23 +3,6 @@ import { Download, ExternalLink, MapPin, ShieldCheck, Sparkles, Workflow } from 
 import { Button } from './ui/button';
 
 const roles = ['Full Stack Developer', 'Frontend Engineer', 'Software Engineer', 'B.Tech CSE Student'];
-const heroHighlights = [
-  {
-    icon: Workflow,
-    title: 'MERN + PHP/MySQL',
-    text: 'Building full-stack projects with practical database and API workflows.',
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Auth & APIs',
-    text: 'Experience with JWT, Firebase Auth, REST endpoints, and protected routes.',
-  },
-  {
-    icon: Sparkles,
-    title: 'AI-Enabled Products',
-    text: 'Built Smriti AI with multilingual assessments, analytics, and AI API integrations.',
-  },
-];
 const stack = ['React', 'Node.js', 'Express', 'MongoDB', 'PHP', 'MySQL', 'Tailwind CSS', 'Firebase'];
 
 export function HeroSection() {
@@ -102,21 +85,6 @@ export function HeroSection() {
             </Button>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-4 mb-8 animate-fade-in-up delay-400">
-            {heroHighlights.map((item, index) => (
-              <div
-                key={item.title}
-                className="hero-highlight"
-                style={{ animationDelay: `${index * 160}ms` }}
-              >
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="w-5 h-5 text-primary" />
-                </div>
-                <h2 className="text-base font-semibold mb-2">{item.title}</h2>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.text}</p>
-              </div>
-            ))}
-          </div>
 
           <div className="flex flex-wrap justify-center gap-2 animate-fade-in-up delay-500">
             {stack.map((item, index) => (

@@ -102,7 +102,6 @@ export function HeroSection() {
             <div className="flex items-center justify-between gap-4 border-b border-border pb-4 mb-4">
               <div>
                 <p className="text-xs uppercase text-muted-foreground">Developer profile</p>
-                <p className="font-semibold">Resume-backed full-stack portfolio</p>
               </div>
               <span className="text-xs text-primary bg-primary/10 border border-primary/20 rounded-lg px-3 py-1">
                 Available

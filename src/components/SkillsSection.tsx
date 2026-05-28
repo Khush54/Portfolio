@@ -1,31 +1,27 @@
+import { Code2, Database, Server, Sparkles } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const skillCategories = [
   {
     title: 'Frontend',
-    skills: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Tailwind CSS', 'Responsive Design','React'],
+    icon: Code2,
+    skills: ['React.js', 'React Router', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'Bootstrap', 'Chart.js', 'Vite'],
   },
   {
-    title: 'Programming',
-    skills: ['SQL', 'MySQL', 'PHP'],
+    title: 'Backend & Databases',
+    icon: Server,
+    skills: ['Node.js', 'Express.js', 'REST APIs', 'JWT', 'Mongoose', 'PHP', 'MongoDB Atlas', 'MySQL'],
   },
   {
-    title: 'Tools & Version Control',
-    skills: ['Git', 'GitHub'],
+    title: 'Cloud, AI & Tools',
+    icon: Sparkles,
+    skills: ['Firebase Auth', 'Vercel', 'Netlify', 'Gemini API', 'Groq', 'Git', 'GitHub', 'VS Code'],
   },
-];
-
-const allSkills = [
-  { name: 'HTML', level: 95 },
-  { name: 'CSS', level: 90 },
-  { name: 'JavaScript', level: 85 },
-  { name: 'Bootstrap', level: 88 },
-  { name: 'Tailwind CSS', level: 90 },
-  { name: 'React', level: 75 },
-  { name: 'SQL', level: 80 },
-  { name: 'MySQL', level: 90 },
-  { name: 'PHP', level: 80 },
-  { name: 'Git/GitHub', level: 80 },
+  {
+    title: 'Data Modelling',
+    icon: Database,
+    skills: ['Schema Design', 'CRUD', 'Relational Modelling', 'MongoDB Collections', 'Server-Side Validation'],
+  },
 ];
 
 export function SkillsSection() {
@@ -39,45 +35,29 @@ export function SkillsSection() {
             My <span className="text-gradient">Skills</span>
           </h2>
           <p className={`section-subtitle ${isVisible ? 'animate-fade-in-up delay-100' : 'opacity-0'}`}>
-            Technologies and tools I work with
+            Technologies and tools I use to build web applications
           </p>
         </div>
 
-        {/* Skill badges */}
-        <div className={`flex flex-wrap justify-center gap-3 mb-16 max-w-3xl mx-auto ${isVisible ? 'animate-scale-in delay-200' : 'opacity-0'}`}>
-          {skillCategories.flatMap((cat) =>
-            cat.skills.map((skill, idx) => (
-              <span
-                key={skill}
-                className="skill-badge"
-                style={{ animationDelay: `${idx * 50}ms` }}
-              >
-                {skill}
-              </span>
-            ))
-          )}
-        </div>
-
-        {/* Skill bars */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {allSkills.map((skill, index) => (
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {skillCategories.map((category, index) => (
             <div
-              key={skill.name}
+              key={category.title}
               className={`glass-card ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
-              style={{ animationDelay: `${300 + index * 50}ms` }}
+              style={{ animationDelay: `${200 + index * 100}ms` }}
             >
-              <div className="flex justify-between items-center mb-3">
-                <span className="font-medium">{skill.name}</span>
-                <span className="text-sm text-muted-foreground">{skill.level}%</span>
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <category.icon className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold">{category.title}</h3>
               </div>
-              <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-gradient-to-r from-primary to-accent rounded-full transition-all duration-1000 ease-out"
-                  style={{
-                    width: isVisible ? `${skill.level}%` : '0%',
-                    transitionDelay: `${400 + index * 100}ms`,
-                  }}
-                />
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((skill) => (
+                  <span key={skill} className="skill-badge">
+                    {skill}
+                  </span>
+                ))}
               </div>
             </div>
           ))}

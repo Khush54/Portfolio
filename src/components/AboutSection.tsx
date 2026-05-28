@@ -1,16 +1,16 @@
-import { Code2, Palette, Zap, Target } from 'lucide-react';
+import { Code2, Database, Zap, Target } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const highlights = [
   {
     icon: Code2,
-    title: 'Clean Code',
-    description: 'Writing maintainable and efficient code',
+    title: 'Full-Stack Builds',
+    description: 'React, Node.js, Express, PHP, and APIs',
   },
   {
-    icon: Palette,
-    title: 'UI/UX Design',
-    description: 'Creating beautiful user interfaces',
+    icon: Database,
+    title: 'Database Design',
+    description: 'MongoDB and MySQL schema design',
   },
   {
     icon: Zap,
@@ -45,21 +45,20 @@ export function AboutSection() {
           {/* Left side - Text content */}
           <div className={`space-y-6 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`}>
             <div className="glass-card">
-              <h3 className="text-xl font-semibold mb-4 text-gradient">Career Objective</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gradient">Professional Summary</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Dynamic and results-driven intern with hands-on experience in responsive web design 
-                and UI/UX enhancement. Proficient in HTML, CSS, JavaScript, Bootstrap, and Tailwind CSS. 
-                Passionate about creating clean, user-friendly, and visually appealing interfaces that 
-                deliver exceptional user experiences.
+                B.Tech CSE student with hands-on experience building full-stack web applications
+                using the MERN stack, PHP, and MySQL. I am targeting Full Stack, Frontend,
+                and Software Engineering roles where I can build reliable, user-focused products.
               </p>
             </div>
 
             <div className="glass-card">
-              <h3 className="text-xl font-semibold mb-4 text-gradient">What Drives Me</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gradient">Current Focus</h3>
               <p className="text-muted-foreground leading-relaxed">
-                I believe in the power of well-crafted web experiences. Every pixel matters, 
-                and every interaction should feel intuitive. I'm constantly learning and 
-                exploring new technologies to stay at the forefront of web development.
+                I enjoy turning practical problems into clear digital workflows, from responsive
+                interfaces to protected APIs and well-structured data models. My recent work includes
+                Smriti AI, a multilingual healthcare screening platform built during industrial training.
               </p>
             </div>
           </div>
@@ -72,7 +71,7 @@ export function AboutSection() {
                 className="glass-card text-center group"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                <div className="w-14 h-14 mx-auto mb-4 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   <item.icon className="w-7 h-7 text-primary" />
                 </div>
                 <h4 className="font-semibold mb-2">{item.title}</h4>

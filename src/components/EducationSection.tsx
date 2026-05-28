@@ -4,8 +4,8 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 const education = [
   {
     degree: 'B.Tech in Computer Science and Engineering',
-    institution: 'Universal Institute of Engineering and Technology, Punjab',
-    period: 'Expected Graduation: August 2026',
+    institution: 'Universal Institute of Engineering & Technology, IKG PTU',
+    period: '2022 - 2026',
     grade: 'CGPA: 8.92/10',
     icon: GraduationCap,
   },
@@ -27,11 +27,18 @@ const education = [
 
 const certifications = [
   {
-    title: 'Front-End Development Training',
-    organization: 'Excellence Technology, Mohali',
-    period: 'Jun – Sep 2024',
+    title: 'Full Stack Developer Trainee',
+    organization: 'Alpha IT Managed Services Pvt. Ltd., Mohali',
+    period: 'Jan - Jun 2026',
     description:
-      'Focused on responsive layouts and modern UI/UX design practices.',
+      'Completed 6-month industrial training building Smriti AI end-to-end across MERN stack APIs, MongoDB collections, JWT/Firebase auth, and analytics views.',
+  },
+  {
+    title: 'Front-End Web Development',
+    organization: 'Excellence Technology',
+    period: 'Jun - Sep 2024',
+    description:
+      'Completed 3-month hands-on front-end program and delivered deployed portfolio projects using responsive design and JavaScript fundamentals.',
   },
 ];
 
@@ -71,7 +78,7 @@ export function EducationSection() {
                   <div className="absolute -left-[3.25rem] top-6 w-4 h-4 rounded-full bg-primary glow" />
                   
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
                       <item.icon className="w-6 h-6 text-primary" />
                     </div>
                     <div className="flex-1">

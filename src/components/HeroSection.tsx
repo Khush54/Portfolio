@@ -1,8 +1,26 @@
 import { useEffect, useState } from 'react';
-import { ArrowDown, Download, ExternalLink, MapPin } from 'lucide-react';
+import { Download, ExternalLink, MapPin, ShieldCheck, Sparkles, Workflow } from 'lucide-react';
 import { Button } from './ui/button';
 
-const roles = ['Front-End Developer', 'Web Developer', 'UI/UX Enthusiast', 'B.Tech CSE Student'];
+const roles = ['Full Stack Developer', 'Frontend Engineer', 'Software Engineer', 'B.Tech CSE Student'];
+const heroHighlights = [
+  {
+    icon: Workflow,
+    title: 'MERN + PHP/MySQL',
+    text: 'Building full-stack projects with practical database and API workflows.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Auth & APIs',
+    text: 'Experience with JWT, Firebase Auth, REST endpoints, and protected routes.',
+  },
+  {
+    icon: Sparkles,
+    title: 'AI-Enabled Products',
+    text: 'Built Smriti AI with multilingual assessments, analytics, and AI API integrations.',
+  },
+];
+const stack = ['React', 'Node.js', 'Express', 'MongoDB', 'PHP', 'MySQL', 'Tailwind CSS', 'Firebase'];
 
 export function HeroSection() {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -17,18 +35,16 @@ export function HeroSection() {
           if (displayText.length < currentRole.length) {
             setDisplayText(currentRole.slice(0, displayText.length + 1));
           } else {
-            setTimeout(() => setIsDeleting(true), 2000);
+            setTimeout(() => setIsDeleting(true), 1800);
           }
+        } else if (displayText.length > 0) {
+          setDisplayText(displayText.slice(0, -1));
         } else {
-          if (displayText.length > 0) {
-            setDisplayText(displayText.slice(0, -1));
-          } else {
-            setIsDeleting(false);
-            setRoleIndex((prev) => (prev + 1) % roles.length);
-          }
+          setIsDeleting(false);
+          setRoleIndex((prev) => (prev + 1) % roles.length);
         }
       },
-      isDeleting ? 50 : 100
+      isDeleting ? 45 : 90
     );
 
     return () => clearTimeout(timeout);
@@ -39,37 +55,26 @@ export function HeroSection() {
   };
 
   return (
-    <section
-      id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
-    >
-      {/* Background decorations */}
-      <div className="absolute inset-0 hero-bg" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse-slow" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse-slow delay-500" />
-      
-      {/* Grid pattern */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px),
-                          linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
-        backgroundSize: '60px 60px'
-      }} />
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 pb-20 md:pt-32 md:pb-24">
+      <div className="absolute inset-0 hero-bg opacity-70" />
+      <div className="hero-aurora" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Location badge */}
-          <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full text-sm mb-8 animate-fade-in-down">
+        <div className="max-w-5xl mx-auto text-center px-2 md:px-8">
+          <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-lg text-sm mb-8 animate-fade-in-down">
             <MapPin className="w-4 h-4 text-primary" />
-            <span className="text-muted-foreground">Mohali, India</span>
+            <span className="text-muted-foreground">Mohali, India · Open to Full Stack, Frontend, and Software Engineering roles</span>
           </div>
 
-          {/* Main heading */}
+          <p className="text-sm font-semibold uppercase text-primary mb-4 animate-fade-in-up">
+            Full Stack Developer Portfolio
+          </p>
+
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up">
-            Hi, I'm{' '}
-            <span className="text-gradient">Khushpreet Kaur</span>
+            Hi, I'm <span className="text-gradient hero-name">Khushpreet Kaur</span>
           </h1>
 
-          {/* Typing effect */}
           <div className="h-12 md:h-14 flex items-center justify-center mb-8">
             <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground font-mono">
               <span className="text-primary">&lt;</span>
@@ -79,19 +84,17 @@ export function HeroSection() {
             </p>
           </div>
 
-          {/* Description */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-in-up delay-200">
-            Passionate about creating clean, user-friendly, and visually appealing web interfaces
-            with modern technologies.
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 animate-fade-in-up delay-200">
+            B.Tech CSE student building full-stack web applications with React, Node.js,
+            Express, MongoDB, PHP, MySQL, and modern frontend tools.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-300">
-            <Button variant="hero" size="xl" onClick={scrollToProjects}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10 animate-fade-in-up delay-300">
+            <Button variant="hero" size="xl" className="hero-cta" onClick={scrollToProjects}>
               <ExternalLink className="w-5 h-5" />
               View Projects
             </Button>
-            <Button variant="heroOutline" size="xl" asChild>
+            <Button variant="heroOutline" size="xl" className="hero-cta" asChild>
               <a href="/Khushpreet_Kaur.pdf" download>
                 <Download className="w-5 h-5" />
                 Download Resume
@@ -99,7 +102,59 @@ export function HeroSection() {
             </Button>
           </div>
 
-          
+          <div className="grid md:grid-cols-3 gap-4 mb-8 animate-fade-in-up delay-400">
+            {heroHighlights.map((item, index) => (
+              <div
+                key={item.title}
+                className="hero-highlight"
+                style={{ animationDelay: `${index * 160}ms` }}
+              >
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <item.icon className="w-5 h-5 text-primary" />
+                </div>
+                <h2 className="text-base font-semibold mb-2">{item.title}</h2>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.text}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-2 animate-fade-in-up delay-500">
+            {stack.map((item, index) => (
+              <span
+                key={item}
+                className="skill-badge"
+                style={{ animationDelay: `${index * 70}ms` }}
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+
+          <div className="hero-profile-panel mt-10 text-left animate-fade-in-up delay-600">
+            <div className="flex items-center justify-between gap-4 border-b border-border pb-4 mb-4">
+              <div>
+                <p className="text-xs uppercase text-muted-foreground">Developer profile</p>
+                <p className="font-semibold">Resume-backed full-stack portfolio</p>
+              </div>
+              <span className="text-xs text-primary bg-primary/10 border border-primary/20 rounded-lg px-3 py-1">
+                Available
+              </span>
+            </div>
+            <div className="grid sm:grid-cols-3 gap-4">
+              <div>
+                <p className="text-xs text-muted-foreground mb-1">Flagship Project</p>
+                <p className="font-medium">Smriti AI</p>
+              </div>
+              <div>
+                <p className="text-xs text-muted-foreground mb-1">Training</p>
+                <p className="font-medium">Alpha IT · 6 months</p>
+              </div>
+              <div>
+                <p className="text-xs text-muted-foreground mb-1">Education</p>
+                <p className="font-medium">B.Tech CSE · 8.92 CGPA</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

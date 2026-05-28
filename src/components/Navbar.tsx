@@ -62,9 +62,9 @@ export function Navbar() {
               e.preventDefault();
               handleNavClick('#home');
             }}
-            className="text-xl font-bold text-gradient"
+            className="text-lg font-bold text-gradient"
           >
-            KK
+            Khushpreet Kaur
           </a>
 
           {/* Desktop Navigation */}

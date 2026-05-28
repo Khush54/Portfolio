@@ -1,37 +1,29 @@
-import { ExternalLink, Github, Book, Globe, Gamepad2 } from 'lucide-react';
+import { ExternalLink, Github, Book, BrainCircuit } from 'lucide-react';
 import { Button } from './ui/button';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const projects = [
   {
-    title: 'Library Management System',
+    title: 'Smriti AI',
     description:
-      'A web-based application using PHP, MySQL, HTML, CSS, and JavaScript for managing books, students, issue/return records, and previous year questions.',
-    tech: ['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
-    icon: Book,
+      'AI-powered dementia screening platform with multilingual assessments, role-based portals, JWT and Firebase authentication, MongoDB analytics, and Chart.js visualizations.',
+    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Firebase', 'Gemini API'],
+    icon: BrainCircuit,
     color: 'from-blue-500 to-cyan-500',
+    highlights: ['10 Indian languages', '3 role-based portals', '29/29 tests passed'],
+    github: 'https://github.com/Khush54/SmritiAI',
+    demo: 'https://smriti-ai-tau.vercel.app/',
+  },
+  {
+    title: 'Libra Sphere',
+    description:
+      'Full-stack library management system for books, copies, borrowing records, and separate Admin and Student portal views with session-based authentication.',
+    tech: ['PHP', 'MySQL', 'JavaScript', 'HTML', 'CSS'],
+    icon: Book,
+    color: 'from-emerald-500 to-teal-500',
+    highlights: ['40+ book titles', '280+ copy records', '6-table MySQL schema'],
     github: 'https://github.com/Khush54/LMS',
     demo: 'https://lms-easy.infinityfreeapp.com/',
-  },
-  {
-    title: 'Traveller Website',
-    description:
-      'A responsive tourism website highlighting India\'s cultural diversity using HTML, CSS, and Bootstrap with beautiful layouts and animations.',
-    tech: ['HTML', 'CSS', 'Bootstrap', 'Responsive Design'],
-    icon: Globe,
-    color: 'from-emerald-500 to-teal-500',
-    github: 'https://github.com/Khush54/Traveller',
-    demo: 'https://traveller-easywaytoexplore.netlify.app/',
-  },
-  {
-    title: 'Mini Web Apps Collection',
-    description:
-      'Collection of small projects like calculator, word counter, random color generator, password generator, and rock-paper-scissors game showcasing JavaScript DOM skills.',
-    tech: ['JavaScript', 'HTML', 'CSS', 'DOM Manipulation'],
-    icon: Gamepad2,
-    color: 'from-purple-500 to-pink-500',
-    github: 'https://github.com/Khush54/Mini-Web-Apps',
-    demo: 'https://mini-web-apps-dom.netlify.app/',
   },
 ];
 
@@ -48,29 +40,30 @@ export function ProjectsSection() {
             Featured <span className="text-gradient">Projects</span>
           </h2>
           <p className={`section-subtitle ${isVisible ? 'animate-fade-in-up delay-100' : 'opacity-0'}`}>
-            Some of my recent work
+            Selected work from my resume
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {projects.map((project, index) => (
             <div
               key={project.title}
               className={`glass-card group overflow-hidden ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
               style={{ animationDelay: `${200 + index * 100}ms` }}
             >
-              {/* Icon header */}
-              <div className={`h-32 -mx-6 -mt-6 mb-6 bg-gradient-to-br ${project.color} flex items-center justify-center relative overflow-hidden`}>
-                <div className="absolute inset-0 bg-black/20" />
-                <project.icon className="w-16 h-16 text-white relative z-10 group-hover:scale-110 transition-transform duration-300" />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+              <div className="flex items-start gap-4 mb-5">
+                <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${project.color} flex items-center justify-center flex-shrink-0`}>
+                  <project.icon className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">Featured resume project</p>
+                </div>
               </div>
 
-              {/* Content */}
-              <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-                {project.title}
-              </h3>
-              <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+              <p className="text-muted-foreground text-sm mb-4">
                 {project.description}
               </p>
 
@@ -83,6 +76,14 @@ export function ProjectsSection() {
                   >
                     {tech}
                   </span>
+                ))}
+              </div>
+
+              <div className="grid gap-2 mb-4">
+                {project.highlights.map((highlight) => (
+                  <div key={highlight} className="text-xs text-muted-foreground bg-secondary/70 border border-border rounded-lg px-3 py-2">
+                    {highlight}
+                  </div>
                 ))}
               </div>
 

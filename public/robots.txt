@@ -1,14 +1,23 @@
-User-agent: Googlebot
+# Robots.txt for Khushpreet Kaur Portfolio
+# https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
 Allow: /
 
-User-agent: Bingbot
-Allow: /
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
 
+# Allow specific crawlers for social media
 User-agent: Twitterbot
 Allow: /
 
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
+User-agent: Slackbot
 Allow: /
+
+# Sitemap location
+Sitemap: https://khushpreetkaurportfolio.netlify.app/sitemap.xml

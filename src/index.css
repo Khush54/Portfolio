@@ -6,8 +6,8 @@
 
 @layer base {
   :root {
-    --background: 220 30% 98%;
-    --foreground: 224 42% 10%;
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
@@ -15,79 +15,75 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    --primary: 231 56% 45%;
+    --primary: 210 80% 50%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 220 28% 95%;
+    --secondary: 210 40% 96%;
     --secondary-foreground: 222 47% 11%;
 
-    --muted: 220 28% 95%;
-    --muted-foreground: 218 16% 39%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 166 72% 32%;
+    --accent: 146 70% 57%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 221 83% 53%;
+    --border: 214 32% 89%;
+    --input: 214 32% 89%;
+    --ring: 214 83% 53%;
 
     --radius: 0.5rem;
 
     /* Custom tokens */
-    --warm: 18 82% 54%;
-    --glass-bg: 0 0% 100% / 0.9;
-    --glass-border: 220 24% 82% / 0.8;
-    --hero-gradient: linear-gradient(120deg, hsl(231 56% 45% / 0.08), transparent 34%),
-      linear-gradient(240deg, hsl(166 72% 32% / 0.07), transparent 36%),
-      linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--background)) 42%, hsl(var(--secondary)) 100%);
-    --text-gradient: linear-gradient(135deg, hsl(231 56% 45%) 0%, hsl(166 72% 32%) 70%);
-    --card-shadow: 0 16px 46px hsl(224 42% 10% / 0.08);
-    --card-shadow-hover: 0 22px 64px hsl(224 42% 10% / 0.13);
-    --glow: 0 0 28px hsl(166 72% 32% / 0.18);
+    --warm: 35 84% 59%;
+    --glass-bg: 0 0% 100% / 0.85;
+    --glass-border: 210 20% 88% / 0.3;
+    --hero-gradient: linear-gradient(135deg, hsl(210 80% 50% / 0.1), hsl(146 70% 57% / 0.1));
+    --text-gradient: linear-gradient(135deg, hsl(210 80% 50%) 0%, hsl(146 70% 57%) 100%);
+    --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --card-shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+    --glow: 0 0 20px rgb(134 239 172 / 0.3);
   }
 
   .dark {
-    --background: 224 34% 8%;
+    --background: 222 47% 11%;
     --foreground: 210 40% 98%;
 
-    --card: 226 30% 11%;
+    --card: 222 47% 14%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222 47% 9%;
+    --popover: 222 47% 14%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 232 82% 70%;
+    --primary: 210 80% 50%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 226 24% 16%;
+    --secondary: 217 33% 17%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 226 24% 16%;
-    --muted-foreground: 216 16% 72%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 166 70% 44%;
+    --accent: 146 70% 57%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 226 24% 18%;
-    --input: 226 24% 18%;
-    --ring: 221 83% 53%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 216 80% 47%;
 
     /* Custom tokens dark */
-    --warm: 18 88% 60%;
-    --glass-bg: 226 30% 11% / 0.9;
-    --glass-border: 0 0% 100% / 0.11;
-    --hero-gradient: linear-gradient(120deg, hsl(232 82% 70% / 0.12), transparent 34%),
-      linear-gradient(240deg, hsl(166 70% 44% / 0.09), transparent 36%),
-      linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--background)) 42%, hsl(var(--secondary)) 100%);
-    --card-shadow: 0 16px 44px hsl(0 0% 0% / 0.24);
-    --card-shadow-hover: 0 20px 56px hsl(0 0% 0% / 0.34);
-    --glow: 0 0 34px hsl(166 70% 44% / 0.22);
+    --warm: 35 84% 59%;
+    --glass-bg: 222 47% 14% / 0.7;
+    --glass-border: 217 33% 17% / 0.4;
+    --hero-gradient: linear-gradient(135deg, hsl(210 80% 50% / 0.2), hsl(146 70% 57% / 0.15));
+    --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.2);
+    --card-shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -2px rgb(0 0 0 / 0.3);
+    --glow: 0 0 25px rgb(134 239 172 / 0.4);
   }
 }
 
